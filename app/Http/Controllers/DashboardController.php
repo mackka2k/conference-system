@@ -9,6 +9,6 @@ class DashboardController extends Controller
         return view('dashboard', [
             'role' => session('user_role'),
         ]);
+        // 5
     }
-
 }
