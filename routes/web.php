@@ -1,37 +1,31 @@
 <?php
-
+use App\Http\Controllers\Admin\ConferenceController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
-// ======= [Pagrindinis sistemos puslapis.]==========
-Route::get('/', function () {
-    return view('dashboard');
+// [MAIN DASHBOARD ROUTE]
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+// [POST ROUTE FOR SETTING USER ROLE]
+Route::post('/set-user-role', [ConferenceController::class, 'setUserRole'])->name('setUserRole');
+
+// [CONFERENCE LISTING ROUTE]
+Route::get('/conferences', [ConferenceController::class, 'index'])->name('conferences.index');
+
+// [ADMIN CRUD ROUTES]
+Route::prefix('admin/conferences')->name('conference.')->group(function () {
+    Route::get('/create', [ConferenceController::class, 'create'])->name('create');
+    Route::post('/store', [ConferenceController::class, 'store'])->name('store');
+    Route::get('/{conference}/edit', [ConferenceController::class, 'edit'])->name('edit');
+    Route::post('/update/{id}', [ConferenceController::class, 'update'])->name('update');
+    Route::delete('/{id}', [ConferenceController::class, 'destroy'])->name('destroy');
 });
-// =================================================
 
-// ======== [Kliento posistemis.]==========
-// 1. Visu konferenciju atvaizdavimas.
-// 2. Konkrecios konferencijos perziura.
-// 3. Kliento registracija (patektos HTML formos apdorojimas).
-// =================================================
+// [CONFERENCE REGISTRATION ROUTE]
+Route::post('/conferences/{id}/register', [ConferenceController::class, 'register'])->name('conference.register');
 
-// ======== [Darbuotojo posistemis.]================
-// 1. Visų konferencijų atvaizdavimas;
-// 2. Konkrecios konferencijos perziura;
-// =================================================
+// [CONFERENCE LIST PREVIEW ROUTE]
+Route::get('/conferences/{id}', [ConferenceController::class, 'show'])->name('conferences.show');
 
-// ======== [Sistemos administratoriaus posistemis.]==========
-// 1. Pagrindinis puslapis su administratoriaus funkcionalumais;
-
-// * [Sistemos naudotojų valdymas]
-// 2. Visų sistemos naudotojų sąrašas;
-// 3. Konkretaus naudotojo redagavimo formos atvaizdavimas;
-// 4. Konkretaus naudotojo redagavimo formos duomenų apdorojimas;
-
-// * [Konferencijų valdymas]
-// 5. Puslapio, su konferencijų sąrašų, atvaizdavimas;
-// 6. Konferencijų kūrimo formos atvaizdavimas;
-// 7. Konferencijos kūrimo formos duomenų apdorojimas;
-// 8. Konferencijos redagavimo formos atvaizdavimas;
-// 9. Konferencijos redagavimo formos duomenų apdorojimas;
-// 10. Konferencijos šalinimo operacijos apdorojimas.
-// =================================================
+// [ADMIN DASHBOARD ROUTE]
+Route::get('/admin/dashboard', [ConferenceController::class, 'dashboard'])->name('admin.dashboard');

@@ -1,27 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout.app')
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{ config('app.name') }}</title>
-	<link rel="stylesheet" href="{{ mix('css/app.css') }}">
-</head>
+@section('content')
+<h2 class="role-heading text-center mb-4">Select Your Role</h2>
 
-<body>
-	<header>
-		<h1>Welcome to {{ config('app.name') }}</h1>
-	</header>
+<div class="d-flex justify-content-center">
+	<form method="POST" action="{{ route('setUserRole') }}" class="role-form p-4 rounded shadow-sm bg-light">
+		@csrf
+		<div class="form-group mb-3">
+			<label for="role" class="form-label" style="color: rgb(49, 48, 48)">Choose a role:</label>
+			<select name="role" id="role" class="form-select role-select">
+				<option value="Client">Client</option>
+				<option value="Employee">Employee</option>
+				<option value="Admin">Admin</option>
+			</select>
+		</div>
+		<div class="text-center">
+			<button type="submit" class="btn conference-btn btn-primary px-4">Set Role</button>
+		</div>
+	</form>
+</div>
 
-	<main>
-		@yield('content')
-	</main>
+@if(session('user_role'))
+<div class="text-center mt-4">
+	<p class="current-role text-success">Current Role: <strong>{{ session('user_role') }}</strong></p>
+	<p class="student-info">Student: Evaldas Mackonis</p>
+	<p class="group-info">Group: PIT-22-NL</p>
 
-	<footer>
-		<p>&copy; {{ date('Y') }}</p>
-	</footer>
+	<a href="{{ route('conferences.index') }}" class="btn btn-secondary view-conferences mt-3">View Conferences</a>
 
-	<script src="{{ mix('js/app.js') }}"></script>
-</body>
-
-</html>
+	@if(session('user_role') === 'Admin')
+	<a href="{{ route('admin.dashboard') }}" class="btn btn-primary admin-dashboard mt-3">Admin Dashboard</a>
+	@endif
+</div>
+@endif
+@endsection

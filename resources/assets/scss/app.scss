@@ -1,1 +1,306 @@
 @import '~bootstrap/scss/bootstrap';
+
+$background-color: #1C1E21; 
+$text-color: #ECDFCC; 
+$navbar-footer-color: #3C3D37; 
+$link-color: #697565; 
+$link-hover-color: #ECDFCC; 
+$sidebar-bg-color: #3C3D37; 
+$card-bg-color: #2A2C2D; 
+$card-title-color: #697565; 
+$card-text-color: #ECDFCC; 
+
+body {
+    background-color: $background-color; 
+    color: $text-color; 
+}
+
+h1 {
+    color: $text-color; 
+}
+
+.navbar {
+}
+
+.nav-link {
+    color: $link-color; 
+
+    &:hover {
+        color: $link-hover-color; 
+        text-decoration: underline; 
+    }
+}
+
+footer {
+    background-color: $navbar-footer-color; 
+    color: $text-color; 
+}
+
+#sidebar {
+    background-color: $sidebar-bg-color; 
+    color: $text-color; 
+
+    .nav-link {
+        color: $text-color; 
+
+        &:hover {
+            background-color: $link-color; 
+        }
+
+        &.active {
+            background-color: $link-color; 
+        }
+    }
+}
+
+.card {
+    background-color: $card-bg-color; 
+    border-radius: 0.5rem; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+
+    .card-title {
+        color: $card-title-color; 
+    }
+
+    .card-text {
+        color: $card-text-color; 
+    }
+}
+
+.conference-btn {
+	background-color: #37AA9C; 
+	color: #ffffff; 
+	border-radius: 0.5rem; 
+	padding: 10px 20px; 
+	transition: background-color 0.3s, transform 0.2s; 
+
+	&:hover {
+			background-color: #2C2F31; 
+			color: #ECDFCC; 
+			transform: scale(1.05); 
+	}
+}
+
+body {
+	background-color: #1C1E21;
+	color: #ECDFCC;
+	font-family: 'Arial', sans-serif;
+	padding: 20px;
+}
+
+h2 {
+	color: #ECDFCC;
+}
+
+p {
+	color: #ECDFCC;
+}
+
+a {
+	text-decoration: none;
+}
+
+.conferences-title {
+	color: #ECDFCC;
+	margin-bottom: 20px;
+}
+
+.user-info {
+	background-color: #343A40;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.conference-card {
+	background-color: #2A2C2D;
+	border: 1px solid #697565;
+	border-radius: 5px;
+	padding: 20px;
+	margin-bottom: 20px;
+	color: #ECDFCC;
+
+	h3.conference-title {
+			margin-top: 0;
+	}
+
+	p.conference-date, p.registered-clients {
+			margin: 10px 0;
+			color: #B0B7B3;
+	}
+
+	.registration-form {
+			display: flex;
+			flex-direction: column;
+			margin-top: 10px;
+
+			.form-input {
+					padding: 8px;
+					margin-bottom: 10px;
+					border: 1px solid #697565;
+					border-radius: 3px;
+					background-color: #1C1E21;
+					color: #ECDFCC;
+			}
+
+			.btn-register {
+					background-color: #37AA9C;
+					color: #ffffff;
+					padding: 10px;
+					border: none;
+					border-radius: 3px;
+					cursor: pointer;
+			}
+
+			.btn-register:hover {
+					background-color: #2D8E78;
+			}
+	}
+
+	.btn-secondary, .btn-create, .btn-edit, .btn-delete {
+			background-color: #697565;
+			color: #ffffff;
+			padding: 10px 15px;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+			display: inline-block;
+			margin-right: 10px;
+			text-align: center;
+	}
+
+	.btn-secondary:hover, .btn-create:hover, .btn-edit:hover, .btn-delete:hover {
+			background-color: #57634F;
+	}
+
+	.btn-create {
+			background-color: #37AA9C;
+	}
+
+	.btn-create:hover {
+			background-color: #2D8E78;
+	}
+
+	.btn-delete {
+			background-color: #AA3737;
+	}
+
+	.btn-delete:hover {
+			background-color: #8E2D2D;
+	}
+}
+
+.text-success {
+	color: #28a745;
+	margin-top: 10px;
+}
+
+.text-danger {
+	color: #dc3545;
+	margin-top: 10px;
+}
+
+.delete-form {
+	display: inline-block;
+}
+
+@media (max-width: 768px) {
+	.conference-card {
+			padding: 15px;
+	}
+
+	.btn-secondary, .btn-create, .btn-edit, .btn-delete {
+			width: 100%;
+			margin-bottom: 10px;
+	}
+
+	.registration-form {
+			flex-direction: column;
+
+			.form-input {
+					width: 100%;
+			}
+	}
+
+	.role-heading {
+		color: #ECDFCC; 
+		font-size: 1.8rem;
+	}
+	
+	.role-form {
+		background-color: #2A2C2D; 
+		color: #ECDFCC; 
+		border-radius: 0.5rem;
+	}
+	
+	.role-label {
+		color: #2A2C2D;
+		font-weight: bold;
+	}
+	
+	.role-select {
+		background-color: #1E201E;
+		color: #ECDFCC;
+		border: 1px solid #697565;
+	}
+	
+	.current-role {
+		font-size: 1.2rem;
+		color: #37AA9C;
+	}
+	
+	.student-info, .group-info {
+		color: #ECDFCC;
+	}
+	
+	.view-conferences {
+		margin-top: 10px;
+	}
+	
+	.role-form {
+		max-width: 400px;
+		background-color: #f9f9f9; 
+		border: 1px solid #ddd;
+	}
+
+	.conference-btn {
+		background-color: #007bff;
+		border: none;
+		padding: 10px 20px;
+		color: #fff;
+		font-size: 1rem;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background-color 0.3s ease-in-out;
+
+		&:hover {
+			background-color: #0056b3;
+		}
+	}
+
+	.current-role {
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+
+	.view-conferences, .admin-dashboard {
+		margin-top: 10px;
+	}
+
+	.role-select {
+		background-color: #e9ecef;
+		padding: 10px;
+		font-size: 1rem;
+		border-radius: 4px;
+		border: 1px solid #ced4da;
+	}
+}
+
+.text-danger {
+	color: #dc3545; /* Bootstrap red */
+	font-weight: bold; /* Make the text bold */
+	font-size: 1.2em; /* Increase the font size */
+	margin-top: 10px; /* Add some space above */
+}

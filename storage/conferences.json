@@ -1,0 +1,35 @@
+[
+    {
+        "id": 3,
+        "title": "Test Conference - Editedd",
+        "date": "2024-10-11",
+        "status": "completed",
+        "registered_clients": [
+            {
+                "name": "dfsdf",
+                "surname": "SomeSurname",
+                "email": "mackonis777@gmail.com"
+            },
+            {
+                "name": "Evaldas",
+                "surname": "SomeSurname2",
+                "email": "evaldas.mackonis1@gmail.com"
+            },
+            {
+                "name": "sd",
+                "surname": "sd",
+                "email": "evaldas.mackonis1@gmail.com"
+            },
+            {
+                "name": "Evaldas",
+                "surname": "Mackonis",
+                "email": "evaldas.mackonis1@gmail.com"
+            },
+            {
+                "name": "Evaldas",
+                "surname": "Mackonis",
+                "email": "evaldas.mackonis1@gmail.com"
+            }
+        ]
+    }
+]
