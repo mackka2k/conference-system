@@ -1,7 +1,7 @@
 [
     {
         "id": 3,
-        "title": "Test Conference - Editedd",
+        "title": "Test Conference - Editeddd",
         "date": "2024-10-11",
         "status": "completed",
         "registered_clients": [
@@ -25,6 +25,19 @@
                 "surname": "Mackonis",
                 "email": "evaldas.mackonis1@gmail.com"
             },
+            {
+                "name": "Evaldas",
+                "surname": "Mackonis",
+                "email": "evaldas.mackonis1@gmail.com"
+            }
+        ]
+    },
+    {
+        "id": "c14e36e5-276a-42c1-a18b-a62d66a362e4",
+        "title": "dasdasd",
+        "date": "2024-10-02",
+        "status": "scheduled",
+        "registered_clients": [
             {
                 "name": "Evaldas",
                 "surname": "Mackonis",

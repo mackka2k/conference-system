@@ -183,6 +183,6 @@ class ConferenceController extends Controller
 
     public function updateRegisteredClient(Request $request, $conferenceId, $clientIndex) // [UPDATES THE REGISTERED CLIENT DATA]
     {
-        // 2. // 3. // 4.
+
     }
 }

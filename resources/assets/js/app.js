@@ -10,6 +10,12 @@ $(document).ready(function () {
     if (defaultRole === 'Client') {
         $('#role').css('background-color', '#ccccff');
     }
+    else if (defaultRole === 'Employee') {
+        $('#role').css('background-color', '#ccffcc');
+    }
+    else {
+        $('#role').css('background-color', '#ffcccc');
+    }
 
     $('#role').on('change', function () {
         const selectedRole = $(this).val();
@@ -22,6 +28,4 @@ $(document).ready(function () {
             $(this).css('background-color', '#ccccff');
         }
     });
-		
-    console.log("jQuery and Bootstrap are working!");
 });
